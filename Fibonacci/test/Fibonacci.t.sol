@@ -12,14 +12,16 @@ contract FibonacciTest is Test {
     }
 
     function testFibonacci() external {
-        uint256 result = fibonacci.fibonacci(4);
-        uint256 result1 = fibonacci.fibonacci(10);
-        uint256 result2 = fibonacci.fibonacci(20);
-        uint256 result3 = fibonacci.fibonacci(1);
+        uint256 result1 = fibonacci.fibonacci(1);
+        uint256 result2 = fibonacci.fibonacci(2);
+        uint256 result3 = fibonacci.fibonacci(3);
+        uint256 result4 = fibonacci.fibonacci(4);
+        uint256 result5 = fibonacci.fibonacci(8);
 
-        assertEq(result, 3, "expected result to be 3");
-        assertEq(result1, 55, "expected result to be 55");
-        assertEq(result2, 6765, "expected result to be 6765");
+        assertEq(result1, 0, "expected result to be 0");
+        assertEq(result2, 1, "expected result to be 1");
         assertEq(result3, 1, "expected result to be 1");
+        assertEq(result4, 2, "expected result to be 2");
+        assertEq(result5, 13, "expected result to be 13");
     }
 }
