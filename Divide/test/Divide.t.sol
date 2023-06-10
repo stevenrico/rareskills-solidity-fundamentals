@@ -11,7 +11,7 @@ contract DivideTest is Test {
         divide = new Divide();
     }
 
-    function testDivide() public {
+    function testDivide() public {        
         assertEq(
             divide.PERCENTAGE_INTEREST(),
             3,
