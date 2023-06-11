@@ -21,5 +21,35 @@ contract Stack {
         stack = _stack;
     }
 
-    // your code here
+    function push(uint256 newValue) public {
+        stack.push(newValue);
+    }
+
+    function peek() public view returns (uint256) {
+        require(!_isEmpty(stack), "Stack is empty.");
+
+        return stack[stack.length - 1];
+    }
+
+    function pop() public returns (uint256) {
+        require(!_isEmpty(stack), "Stack is empty.");
+
+        uint256 lastEl = stack[stack.length - 1];
+        
+        stack.pop();
+
+        return lastEl;
+    }
+
+    function size() public view returns (uint256) {
+        return stack.length;
+    }
+
+    function getStack() public view returns (uint256[] memory) {
+        return stack;
+    }
+
+    function _isEmpty(uint256[] memory arr) private pure returns (bool) {
+        return arr.length == 0;
+    }
 }
