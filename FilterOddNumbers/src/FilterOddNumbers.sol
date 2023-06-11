@@ -12,9 +12,28 @@ contract FilterOddNumbers {
 
     function filterOdd(uint256[] memory _arr)
         public
-        view
+        pure
         returns (uint256[] memory)
     {
-        // your code here
+        uint256 counter = 0;
+
+        for (uint256 i = 0; i < _arr.length; i++) {
+            if (_arr[i] % 2 == 0) {
+                counter++;
+            }
+        }
+
+        uint256[] memory evenNums = new uint256[](counter);
+
+        uint256 position = 0;
+
+        for (uint256 i = 0; i < _arr.length; i++) {
+            if (_arr[i] % 2 == 0) {
+                evenNums[position] = _arr[i];
+                position++;
+            }
+        }
+
+        return evenNums;
     }
 }
