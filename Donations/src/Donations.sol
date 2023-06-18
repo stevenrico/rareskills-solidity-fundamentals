@@ -10,5 +10,11 @@ contract Donations {
         // the person donated
         // don't forget a person can donate
         // multiple times!
+
+        if (amountDonated[msg.sender] > 0) {
+            amountDonated[msg.sender] += msg.value;
+        } else {
+            amountDonated[msg.sender] = msg.value;
+        }
     }
 }
